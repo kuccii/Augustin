@@ -3,8 +3,6 @@ import { DefaultCatchBoundary } from "@/components/DefaultCatchBoundary";
 import { NotFound } from "@/components/NotFound";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "next-themes";
-import { AuthProvider } from "@/lib/AuthContext";
-import { Base44Scripts } from "base44:document";
 import appCss from "@/index.css?url";
 
 export const Route = createRootRoute({
@@ -16,7 +14,6 @@ export const Route = createRootRoute({
       { title: "Augustin Kimonyo" },
       { name: "description", content: "Gender and social inclusion expert and Master Trainer: policy, research and training across 25 countries." },
     ],
-    // No icon link: the platform adds the app's logo when serving.
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" },
@@ -32,10 +29,8 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-      <AuthProvider>
-        <Outlet />
-        <Toaster />
-      </AuthProvider>
+      <Outlet />
+      <Toaster />
     </ThemeProvider>
   );
 }
@@ -47,10 +42,8 @@ function RootDocument({ children }) {
       <head>
         <HeadContent />
       </head>
-      {/* data-react-root: the builder's preview bridge looks for #root and falls back to this. */}
-      <body data-react-root="true">
+      <body>
         {children}
-        <Base44Scripts />
         <Scripts />
       </body>
     </html>

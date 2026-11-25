@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "base44-tanstack-app",
+  "name": "augustin",
   "compatibility_date": "2026-09-01",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "src/server.js"
+  "main": "@tanstack/react-start/server-entry"
 }

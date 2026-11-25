@@ -1,8 +1,6 @@
-const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
+export const CV_URL = "/files/Augustin_Kimonyo_CV.pdf";
 
-export const CV_URL = "https://media.db.com/files/public/user_6a3a4e8589c198262f83453e/e5e83fd028cb990c1c170e1df16b1995_Augustin_Kimonyo_CV.pdf";
-
-export const HERO_IMG = "https://media.db.com/images/public/6b06de967b24647fcdb26144/7d717ea2f2dfd84ae64494a6dbf3131a_generated_187264c6.png";
+export const HERO_IMG = "/images/hero.png";
 
 export const BIG_WORDS = ["Policy", "Inclusion", "Training", "Research", "Evaluation", "Allyship"];
 
@@ -23,19 +21,19 @@ export const FEATURED = [
     title: "National Policy against Gender Based Violence",
     meta: "2020 to 2021 · MIGEPROF with CARE Rwanda and LIWOHA",
     tags: ["Policy", "Team Lead", "Cabinet Paper"],
-    img: "https://media.db.com/images/public/6b06de967b24647fcdb26144/4061524c8d61861c6171e55efe62f22a_generated_947a1c58.png",
+    img: "/images/featured-1.png",
   },
   {
     title: "Gender Mainstreaming Strategy, PSDYE 2024 to 2029",
     meta: "2026 · MINICOM / GIZ FAST · Kigali",
     tags: ["Strategy", "Private sector", "KPIs"],
-    img: "https://media.db.com/images/public/6b06de967b24647fcdb26144/b214cd69d02f885e718d71ba0de7a555_generated_57e07e23.png",
+    img: "/images/featured-2.png",
   },
   {
     title: "GESI in Land Restoration Ecosystems",
     meta: "2024 to 2025 · Biocem RD Ltd · Seven districts",
     tags: ["GESI", "Fieldwork", "Social inclusion"],
-    img: "https://media.db.com/images/public/6b06de967b24647fcdb26144/c2c35dd167bd4e2b6e565c4a4011ca48_generated_bbd17200.png",
+    img: "/images/featured-3.png",
   },
 ];
 
