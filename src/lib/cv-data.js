@@ -1,6 +1,6 @@
 export const CV_URL = "/files/Augustin_Kimonyo_CV.pdf";
 
-export const HERO_IMG = "/images/hero.png";
+export const HERO_IMG = "/images/hero.svg";
 
 export const BIG_WORDS = ["Policy", "Inclusion", "Training", "Research", "Evaluation", "Allyship"];
 
@@ -21,19 +21,19 @@ export const FEATURED = [
     title: "National Policy against Gender Based Violence",
     meta: "2020 to 2021 · MIGEPROF with CARE Rwanda and LIWOHA",
     tags: ["Policy", "Team Lead", "Cabinet Paper"],
-    img: "/images/featured-1.png",
+    img: "/images/featured-1.svg",
   },
   {
     title: "Gender Mainstreaming Strategy, PSDYE 2024 to 2029",
     meta: "2026 · MINICOM / GIZ FAST · Kigali",
     tags: ["Strategy", "Private sector", "KPIs"],
-    img: "/images/featured-2.png",
+    img: "/images/featured-2.svg",
   },
   {
     title: "GESI in Land Restoration Ecosystems",
     meta: "2024 to 2025 · Biocem RD Ltd · Seven districts",
     tags: ["GESI", "Fieldwork", "Social inclusion"],
-    img: "/images/featured-3.png",
+    img: "/images/featured-3.svg",
   },
 ];
 

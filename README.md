@@ -24,12 +24,14 @@ There is no `index.html`: the document is rendered from `src/routes/__root.jsx`.
 ## Content and assets
 
 - Page content (stats, featured work, experience, references) lives in `src/lib/cv-data.js`; sections are in `src/components/site/`.
-- Images and the CV are served from `public/` and must be added there:
+- Images and the CV are served from `public/`:
 
 | File | Used for |
 | --- | --- |
-| `public/images/hero.png` | Hero background |
-| `public/images/featured-1.png` | Featured: National Policy against Gender Based Violence |
-| `public/images/featured-2.png` | Featured: Gender Mainstreaming Strategy, PSDYE |
-| `public/images/featured-3.png` | Featured: third featured assignment |
-| `public/files/Augustin_Kimonyo_CV.pdf` | "Download full CV" button |
+| `public/images/hero.svg` | Hero background (illustration) |
+| `public/images/featured-1.svg` | Featured: National Policy against Gender Based Violence |
+| `public/images/featured-2.svg` | Featured: Gender Mainstreaming Strategy, PSDYE |
+| `public/images/featured-3.svg` | Featured: GESI in Land Restoration Ecosystems |
+| `public/files/Augustin_Kimonyo_CV.pdf` | "Download full CV" button (built from the content in `src/lib/cv-data.js`) |
+
+The images are original illustrations. To use your own photos, drop files in `public/images/` and update the paths in `src/lib/cv-data.js`.
