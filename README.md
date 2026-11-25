@@ -17,7 +17,7 @@ npm run build    # on Vercel: .vercel/output; elsewhere: a Node server in .outpu
 node .output/server/index.mjs   # run the non-Vercel build locally
 ```
 
-**Vercel:** import the repository in the Vercel dashboard (or run `vercel`). The framework is detected as TanStack Start, so the default build settings work; no `vercel.json` is needed. Requires Node 20 or newer.
+**Vercel:** import the repository in the Vercel dashboard (or run `vercel`). The framework is detected as TanStack Start, so the default build settings work; no `vercel.json` is needed. Runs on Node 22 (pinned in `package.json`).
 
 There is no `index.html`: the document is rendered from `src/routes/__root.jsx`.
 
