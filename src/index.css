@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --background: 38 45% 97%;
+    --foreground: 24 18% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 18% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 18% 11%;
+    --primary: 24 18% 11%;
+    --primary-foreground: 38 45% 97%;
+    --secondary: 34 30% 93%;
+    --secondary-foreground: 24 18% 11%;
+    --muted: 34 28% 93%;
+    --muted-foreground: 26 10% 40%;
+    --accent: 34 30% 92%;
+    --accent-foreground: 24 18% 11%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 20% 87%;
+    --input: 30 20% 87%;
+    --ring: 16 78% 48%;
+    --brand: 16 78% 48%;
+    --brand-foreground: 24 30% 10%;
+    --brand-soft: 26 85% 93%;
+    --invert: 24 20% 12%;
+    --invert-foreground: 38 40% 96%;
+    --invert-muted: 30 10% 66%;
+    --chart-1: 16 78% 48%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --font-heading: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 38 45% 97%;
+    --sidebar-foreground: 24 18% 11%;
+    --sidebar-primary: 24 18% 11%;
+    --sidebar-primary-foreground: 38 45% 97%;
+    --sidebar-accent: 34 28% 93%;
+    --sidebar-accent-foreground: 24 18% 11%;
+    --sidebar-border: 30 20% 87%;
+    --sidebar-ring: 16 78% 48%;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: 24 14% 7%;
+    --foreground: 36 28% 94%;
+    --card: 24 12% 11%;
+    --card-foreground: 36 28% 94%;
+    --popover: 24 12% 11%;
+    --popover-foreground: 36 28% 94%;
+    --primary: 36 28% 94%;
+    --primary-foreground: 24 20% 10%;
+    --secondary: 24 10% 17%;
+    --secondary-foreground: 36 28% 94%;
+    --muted: 24 10% 17%;
+    --muted-foreground: 32 10% 66%;
+    --accent: 24 10% 18%;
+    --accent-foreground: 36 28% 94%;
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 24 9% 22%;
+    --input: 24 9% 22%;
+    --ring: 22 88% 60%;
+    --brand: 22 88% 60%;
+    --brand-foreground: 24 40% 8%;
+    --brand-soft: 22 35% 18%;
+    --invert: 24 12% 13%;
+    --invert-foreground: 36 28% 94%;
+    --invert-muted: 32 10% 64%;
+    --chart-1: 22 88% 60%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 24 12% 9%;
+    --sidebar-foreground: 36 28% 94%;
+    --sidebar-primary: 36 28% 94%;
+    --sidebar-primary-foreground: 24 20% 10%;
+    --sidebar-accent: 24 10% 17%;
+    --sidebar-accent-foreground: 36 28% 94%;
+    --sidebar-border: 24 9% 22%;
+    --sidebar-ring: 22 88% 60%;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track { animation: marquee 40s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+html { scroll-behavior: smooth; }
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  ::selection {
+    @apply bg-brand text-brand-foreground;
+  }
+}
