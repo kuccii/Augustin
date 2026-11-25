@@ -2,7 +2,7 @@
 
 ## Project Context
 
-A personal portfolio site built with **TanStack Start** (React 19, plain JavaScript — no TypeScript): file-based routes, server-side rendering, deployed to Cloudflare Workers. Keep changes focused on the request. See `README.md` for setup and deploy.
+A personal portfolio site built with **TanStack Start** (React 19, plain JavaScript — no TypeScript): file-based routes, server-side rendering, built with Nitro and deployed on Vercel. Keep changes focused on the request. See `README.md` for setup and deploy.
 
 ## Key Files
 
@@ -11,15 +11,14 @@ A personal portfolio site built with **TanStack Start** (React 19, plain JavaScr
 - `src/components/site/`: the page sections (Header, Hero, Featured, About, Experience, Training, Contact).
 - `src/lib/cv-data.js`: all site content and asset paths.
 - `src/components/ui/`: shadcn/ui kit (JSX). `src/index.css` + `tailwind.config.js`: design tokens.
-- `vite.config.js`: `cloudflare({ viteEnvironment: { name: "ssr" } })`, `tanstackStart()`, `react()`. Keep all three. Every runtime dependency in `package.json` is prebundled at startup so a package first imported mid-session can't make the server render load a second React.
-- `wrangler.jsonc`: the Worker entry (`@tanstack/react-start/server-entry`), compatibility date and `nodejs_compat`. Keep `main` and `nodejs_compat`.
+- `vite.config.js`: `tanstackStart()`, `nitro()` (builds the server; picks the Vercel preset automatically when `VERCEL=1`) and `react()`, plus the `@` alias for `src/`. Keep all three plugins.
 - `public/`: static images and the CV PDF, served from `/`.
 
 ## Working Notes
 
-- `npm run dev` runs the Vite dev server; server code runs in `workerd`, as in production.
-- `npm run build` emits `dist/client` and `dist/server`. Never commit them.
+- `npm run dev` runs the Vite dev server.
+- `npm run build` emits `.vercel/output` on Vercel and `.output` elsewhere. Never commit them.
 - Server and first client render must match: read `window`, `document` and browser storage only in effects and handlers, and format dates and numbers with an explicit locale and time zone.
 - Server functions and server routes are public HTTP endpoints: validate all input (zod is installed) and never trust the caller.
-- Secrets belong in Cloudflare (`wrangler secret put`), read in server code only. Anything under `import.meta.env.VITE_*` is compiled into the browser bundle — never put a secret there.
+- Secrets belong in the Vercel project's environment variables, read in server code only via `process.env`. Anything under `import.meta.env.VITE_*` is compiled into the browser bundle — never put a secret there.
 - Run `npm run lint` before finishing code changes. Write JavaScript/JSX only — no `.ts`/`.tsx` files.

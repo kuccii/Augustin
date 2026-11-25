@@ -1,6 +1,6 @@
 # Augustin Kimonyo — portfolio site
 
-Personal site for Augustin Kimonyo, gender and social inclusion expert and Master Trainer. Built with [TanStack Start](https://tanstack.com/start) (React 19, plain JavaScript), Tailwind CSS and shadcn/ui, server-rendered on Cloudflare Workers.
+Personal site for Augustin Kimonyo, gender and social inclusion expert and Master Trainer. Built with [TanStack Start](https://tanstack.com/start) (React 19, plain JavaScript), Tailwind CSS and shadcn/ui, server-rendered with [Nitro](https://nitro.build) and deployed on [Vercel](https://vercel.com).
 
 ## Run locally
 
@@ -13,11 +13,13 @@ npm run lint
 ## Build and deploy
 
 ```bash
-npm run build    # -> dist/client (assets) + dist/server (the Worker)
-npx wrangler deploy
+npm run build    # on Vercel: .vercel/output; elsewhere: a Node server in .output
+node .output/server/index.mjs   # run the non-Vercel build locally
 ```
 
-The build runs through the [Cloudflare Vite plugin](https://developers.cloudflare.com/workers/vite-plugin/), so dev and build both execute server code in `workerd`. There is no `index.html`: the document is rendered from `src/routes/__root.jsx`.
+**Vercel:** import the repository in the Vercel dashboard (or run `vercel`). The framework is detected as TanStack Start, so the default build settings work; no `vercel.json` is needed. Requires Node 20 or newer.
+
+There is no `index.html`: the document is rendered from `src/routes/__root.jsx`.
 
 ## Content and assets
 
