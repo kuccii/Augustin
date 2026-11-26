@@ -21,17 +21,21 @@ node .output/server/index.mjs   # run the non-Vercel build locally
 
 There is no `index.html`: the document is rendered from `src/routes/__root.jsx`.
 
+## Contact form
+
+The form in the Contact section posts to a server function (`src/lib/contact.js`) that emails the message to **akimonyo1@gmail.com** through [Resend](https://resend.com), with the visitor's address as Reply-To. Fields are validated and length-limited, and a hidden honeypot field drops most bot submissions. If sending fails, the form shows the direct `mailto:` address instead.
+
+Set these in the Vercel project (Settings > Environment Variables), then redeploy:
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `RESEND_API_KEY` | yes | API key from your Resend account. Without it the form reports that it is unavailable. |
+| `CONTACT_FROM` | no | Sender, e.g. `Augustin Kimonyo <contact@yourdomain.com>`. Needs a domain verified in Resend. |
+| `CONTACT_TO_EMAIL` | no | Recipient. Defaults to `akimonyo1@gmail.com`. |
+
+Without `CONTACT_FROM`, mail is sent from Resend's shared test address, which only delivers to the email the Resend account was created with. So either create the Resend account with akimonyo1@gmail.com, or verify a domain and set `CONTACT_FROM`.
+
 ## Content and assets
 
-- Page content (stats, featured work, experience, references) lives in `src/lib/cv-data.js`; sections are in `src/components/site/`.
-- Images and the CV are served from `public/`:
-
-| File | Used for |
-| --- | --- |
-| `public/images/hero.svg` | Hero background (illustration) |
-| `public/images/featured-1.svg` | Featured: National Policy against Gender Based Violence |
-| `public/images/featured-2.svg` | Featured: Gender Mainstreaming Strategy, PSDYE |
-| `public/images/featured-3.svg` | Featured: GESI in Land Restoration Ecosystems |
-| `public/files/Augustin_Kimonyo_CV.pdf` | "Download full CV" button (built from the content in `src/lib/cv-data.js`) |
-
-The images are original illustrations. To use your own photos, drop files in `public/images/` and update the paths in `src/lib/cv-data.js`.
+- Page content (stats, featured work, experience) lives in `src/lib/cv-data.js`; sections are in `src/components/site/`.
+- The hero image, the three featured images and the CV PDF are loaded from the original site's media host (`media.base44.com`). If an image fails to load, the page switches to the local illustration in `public/images/`. `public/files/Augustin_Kimonyo_CV.pdf` is a locally generated CV that is not linked by default; to stop depending on that host, download the originals, put them in `public/`, and update the paths in `cv-data.js`.

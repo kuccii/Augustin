@@ -17,7 +17,7 @@ export default function Featured() {
         {FEATURED.map((p, i) => (
           <article key={p.title} className={`group ${i === 1 ? "md:mt-20" : ""}`}>
             <div className="overflow-hidden rounded-[1.75rem] bg-brand-soft">
-              <Image src={p.img} alt={p.title} className="aspect-[4/5] w-full transition duration-700 group-hover:scale-105" />
+              <Image src={p.img} fallbackSrc={p.imgFallback} alt={p.title} className="aspect-[4/5] w-full transition duration-700 group-hover:scale-105" />
             </div>
             <h3 className="mt-5 text-2xl font-bold leading-tight tracking-tight">{p.title}</h3>
             <p className="mt-1 text-sm text-muted-foreground">{p.meta}</p>

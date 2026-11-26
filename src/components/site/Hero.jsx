@@ -1,13 +1,13 @@
 import { ArrowDownRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
-import { BIG_WORDS, HERO_IMG, SKILL_TAGS } from "@/lib/cv-data";
+import { BIG_WORDS, HERO_FALLBACK, HERO_IMG, SKILL_TAGS } from "@/lib/cv-data";
 
 export default function Hero() {
   const words = [...BIG_WORDS, ...BIG_WORDS];
   return (
     <section id="top" className="px-3 md:px-8">
       <div className="relative flex min-h-[640px] flex-col justify-between gap-10 overflow-hidden rounded-[2rem] bg-invert p-6 text-invert-foreground md:h-[calc(100vh-110px)] md:rounded-[2.5rem] md:p-12">
-        <Image src={HERO_IMG} alt="Community members in a workshop circle" className="absolute inset-0 h-full w-full opacity-60 grayscale" />
+        <Image src={HERO_IMG} fallbackSrc={HERO_FALLBACK} alt="Community members in a workshop circle" className="absolute inset-0 h-full w-full opacity-60 grayscale" />
         <div className="absolute inset-0 bg-black/45" />
         <p className="relative max-w-xl text-2xl leading-snug md:text-3xl">
           Gender and Social Inclusion expert and Master Trainer. 18 years across 25 countries, turning policy into practice and men into allies for equality.
