@@ -1,4 +1,4 @@
-export const CV_URL = "https://media.base44.com/files/public/user_6a3a4e8589c198262f83453e/e5e83fd028cb990c1c170e1df16b1995_Augustin_Kimonyo_CV.pdf";
+export const CV_URL = "/files/Augustin_Kimonyo_CV.pdf";
 
 export const CONTACT_EMAIL = "akimonyo1@gmail.com";
 

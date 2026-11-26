@@ -38,4 +38,5 @@ Without `CONTACT_FROM`, mail is sent from Resend's shared test address, which on
 ## Content and assets
 
 - Page content (stats, featured work, experience) lives in `src/lib/cv-data.js`; sections are in `src/components/site/`.
-- The hero image, the three featured images and the CV PDF are loaded from the original site's media host (`media.base44.com`). If an image fails to load, the page switches to the local illustration in `public/images/`. `public/files/Augustin_Kimonyo_CV.pdf` is a locally generated CV that is not linked by default; to stop depending on that host, download the originals, put them in `public/`, and update the paths in `cv-data.js`.
+- The hero image and the three featured images are loaded from the original site's media host (`media.base44.com`). If an image fails to load, the page switches to the local illustration in `public/images/`. To stop depending on that host, download the originals into `public/images/` and update the paths in `src/lib/cv-data.js`.
+- The "Download full CV" button serves `public/files/Augustin_Kimonyo_CV.pdf`, a CV generated from the content in `src/lib/cv-data.js`. Replace the file to change it.
